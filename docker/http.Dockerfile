@@ -29,7 +29,7 @@ COPY --from=build /app/dist ./dist
 COPY package.json ./
 
 USER node
-ENV HOST=0.0.0.0 PORT=8080
+ENV YNAB_MCP_HOST=0.0.0.0 PORT=8080
 EXPOSE 8080
 # Liveness only: /healthz never calls YNAB.
 HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
