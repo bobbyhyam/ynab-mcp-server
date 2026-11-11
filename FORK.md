@@ -10,16 +10,23 @@ superset of upstream's.
 
 | Change | Files | Upstream status |
 | --- | --- | --- |
-| Streamable-HTTP entry point | `src/http.ts`, `src/httpServer.ts`, tests, README | [calebl/ynab-mcp-server#108](https://github.com/calebl/ynab-mcp-server/pull/108) |
 | HTTP container image | `docker/http.Dockerfile`, `.github/workflows/fork-image.yml`, this file | fork only |
 
 When upstream merges an offered change, the next tag merge absorbs it and
 the row comes out of this table.
 
-Absorbed so far: `ynab_get_transactions` newest first
-([calebl/ynab-mcp-server#109](https://github.com/calebl/ynab-mcp-server/pull/109),
-merged upstream 2026-11-09 as `014e45b`; merged into `main` from upstream
-`main` ahead of the next release tag).
+Absorbed so far, both merged into `main` from upstream `main` ahead of the
+0.9.0 release tag:
+
+- `ynab_get_transactions` newest first
+  ([calebl/ynab-mcp-server#109](https://github.com/calebl/ynab-mcp-server/pull/109),
+  merged upstream 2026-11-09 as `014e45b`).
+- Streamable-HTTP entry point
+  ([calebl/ynab-mcp-server#108](https://github.com/calebl/ynab-mcp-server/pull/108),
+  merged upstream 2026-11-10 as `ca5d1a9`).
+
+The fork now carries no source changes, only the image build. If upstream
+ever publishes an HTTP image, the fork can be retired.
 
 ## Releasing an image
 
